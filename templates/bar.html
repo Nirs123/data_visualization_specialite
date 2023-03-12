@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <p class="text-center h1" style="padding-top: 25px; padding-bottom: 30px;">Entrez vos paramètres:</p>
+        <div class = "row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>--Année--</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </select>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>--Classe--</option>
+                    <option value="premiere">Première</option>
+                    <option value="terminale">Terminale</option>
+                </select>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>--Genre--</option>
+                    <option value="All">Garçons et Filles</option>
+                    <option value="Boys">Garçons uniquement</option>
+                    <option value="Girls">Filles uniquement</option>
+                </select>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>--Genre--</option>
+                    <option value="All">Garçons et Filles</option>
+                    <option value="Boys">Garçons uniquement</option>
+                    <option value="Girls">Filles uniquement</option>
+                </select>
+            </div>
+        </div>
+    </div>
+{% endblock %}

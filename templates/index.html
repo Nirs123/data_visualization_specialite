@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <p class="text-center h1" style="padding-top: 25px; padding-bottom: 30px;">Choisissez le graphique que vous voulez générer:</p>
+        <div class = "row">
+            <div class="col-12 col-md-8 col-lg-4">
+                <div class="card" style="width: 21rem;">
+                    <img src="static/bar.png" class="card-img-top" alt="Bar plot">
+                    <div class="card-body">
+                        <h5 class="card-title">Graphique a barres</h5>
+                        <p class="card-text">Affiche le nombre d'étudiants par spécialité selon vos paramètres</p>
+                        <a href="bar" class="btn btn-primary">Créer ce graphique</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 col-lg-4">
+                <div class="card" style="width: 21rem;">
+                    <img src="static/map.png" class="card-img-top" alt="Map plot">
+                    <div class="card-body">
+                        <h5 class="card-title">Carte de chaleur</h5>
+                        <p class="card-text">Affiche une carte de chaleur de la France avec la spécialité de votre choix</p>
+                        <a href="#" class="btn btn-primary">Créer ce graphique</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 col-lg-4">
+                <div class="card" style="width: 21rem;">
+                    <img src="static/pie.png" class="card-img-top" alt="Pie plot">
+                    <div class="card-body">
+                        <h5 class="card-title">Diagramme circulaire</h5>
+                        <p class="card-text">Affiche la répartition garçon/fille dans la spécialité de votre choix</p>
+                        <a href="#" class="btn btn-primary">Créer ce graphique</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
