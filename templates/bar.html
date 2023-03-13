@@ -5,24 +5,24 @@
         <p class="text-center h1" style="padding-top: 25px; padding-bottom: 30px;">Entrez vos paramètres:</p>
         <div class = "row">
             <div class="col-lg-3 d-flex justify-content-center">
-                <select id="year" class="form-select" aria-label="Default select example" style="margin-bottom: 15px;">
-                    <option selected>--Année--</option>
+                <select id="year" class="form-select form-control" aria-label="Default select example" style="margin-bottom: 15px;" required>
+                    <option value="" disabled selected>Choisissez une année</option>
                     <option value="2020">2020</option>
                     <option value="2021">2021</option>
                 </select>
             </div>
 
             <div class="col-lg-3 d-flex justify-content-center">
-                <select id="class" class="form-select" aria-label="Default select example" style="margin-bottom: 15px;">
-                    <option selected>--Classe--</option>
+                <select id="class" class="form-select form-control" aria-label="Default select example" style="margin-bottom: 15px;" required>
+                    <option disabled selected>Choisissez la classe</option>
                     <option value="premiere">Première</option>
                     <option value="terminale">Terminale</option>
                 </select>
             </div>
 
             <div class="col-lg-3 d-flex justify-content-center">
-                <select id="gender" class="form-select" aria-label="Default select example" style="margin-bottom: 15px;">
-                    <option selected>--Genre--</option>
+                <select id="gender" class="form-select form-control" aria-label="Default select example" style="margin-bottom: 15px;" required>
+                    <option disabled selected>Choisissez le sexe</option>
                     <option value="All">Garçons et Filles</option>
                     <option value="Boys">Garçons uniquement</option>
                     <option value="Girls">Filles uniquement</option>
@@ -30,77 +30,74 @@
             </div>
 
             <div class="col-lg-3 d-flex justify-content-center">
-                <select id="location" class="form-select" aria-label="Default select example" style="margin-bottom: 15px;">
-                    <option selected>--Lieu--</option>
+                <select id="location" class="form-select form-control" aria-label="Default select example" style="margin-bottom: 15px;" required>
+                    <option disabled selected>Choisissez la localité</option>
                     <option value="fr">Toute la France</option>
-                    <option value="region">--Régions--</option>
-                    <option value="region,AUVERGNE-RHONE-ALPES">Auvergne-Rhône-Alpes</option>
-                    <option value="region,BOURGOGNE-FRANCHE-COMTE">Bourgogne-Franche-Comte</option>
-                    <option value="region,BRETAGNE">Bretagne</option>
-                    <option value="region,CENTRE-VAL DE LOIRE">Centre Val de Loire</option>
-                    <option value="region,CORSE">Corse</option>
-                    <option value="region,GRAND EST">Grand Est</option>Grenoble
-                    <option value="region,GUADELOUPE">Guadeloupe</option>
-                    <option value="region,GUYANE">Guyane</option>
-                    <option value="region,HAUTS-DE-FRANCE">Hauts-de-France</option>
-                    <option value="region,ILE-DE-FRANCE">Île-de-France</option>
-                    <option value="region,LA REUNION">La Réunion</option>
-                    <option value="region,MARTINIQUE">Martinique</option>
-                    <option value="region,MAYOTTE">Mayotte</option>
-                    <option value="region,NORMANDIE">Normandie</option>
-                    <option value="region,NOUVELLE-AQUITAINE">Nouvelle-Aquitaine</option>
-                    <option value="region,OCCITANIE">Occitanie</option>
-                    <option value="region,PAYS DE LA LOIRE">Pays de la Loire</option>
-                    <option value="region,PROVENCE-ALPES-COTE D'AZUR">Provence-Alpes-Côte d'Azur</option>
-                    <option value="academie">--Académies--</option>
-                    <option value="academie,CLERMONT-FERRAND">Clermond-Ferrand</option>
-                    <option value="academie,GRENOBLE">Grenoble</option>
-                    <option value="academie,LYON">Lyon</option>
-                    <option value="academie,BESANCON">Besancon</option>
-                    <option value="academie,DIJON">Dijon</option>
-                    <option value="academie,RENNES">Rennes</option>
-                    <option value="academie,ORLEANS-TOURS">Orléans-Tours</option>
-                    <option value="academie,CORSE">Corse</option>
-                    <option value="academie,NANCY-METZ">Nancy-Metz</option>
-                    <option value="academie,REIMS">Reims</option>
-                    <option value="academie,STRASBOURG">Strasbourg</option>
-                    <option value="academie,GUADELOUPE">Guadeloupe</option>
-                    <option value="academie,GUYANE">Guyane</option>
-                    <option value="academie,AMIENS">Amiens</option>
-                    <option value="academie,LILLE">Lille</option>
-                    <option value="academie,CRETEIL">Creteil</option>
-                    <option value="academie,PARIS">Paris</option>
-                    <option value="academie,VERSAILLES">Versailles</option>
-                    <option value="academie,LA REUNION">La Réunion</option>
-                    <option value="academie,MARTINIQUE">Martinique</option>
-                    <option value="academie,MAYOTTE">Mayotte</option>
-                    <option value="academie,NORMANDIE">Normandie</option>
-                    <option value="academie,BORDEAUX">Bordeaux</option>
-                    <option value="academie,LIMOGES">Limoges</option>
-                    <option value="academie,POITIERS">Poitiers</option>
-                    <option value="academie,MONTPELLIER">Montpellier</option>
-                    <option value="academie,TOULOUSE">Toulouse</option>
-                    <option value="academie,NANTES">Nantes</option>
-                    <option value="academie,AIX-MARSEILLE">Aix-Marseille</option>
-                    <option value="academie,NICE">Nice</option>
-                    <option value="academie,NOUVELLE CALEDONIE">Nouvelle Calédonie</option>
-                    <option value="academie,POLYNESIE FRANCAISE">Polynésie Française</option>
-                    <option value="academie,ST PIERRE ET MIQUELON">St Pierre et Miquelon</option>
+                    <optgroup label="Régions">
+                        <option value="region,AUVERGNE-RHONE-ALPES">Auvergne-Rhône-Alpes</option>
+                        <option value="region,BOURGOGNE-FRANCHE-COMTE">Bourgogne-Franche-Comte</option>
+                        <option value="region,BRETAGNE">Bretagne</option>
+                        <option value="region,CENTRE-VAL DE LOIRE">Centre Val de Loire</option>
+                        <option value="region,CORSE">Corse</option>
+                        <option value="region,GRAND EST">Grand Est</option>Grenoble
+                        <option value="region,GUADELOUPE">Guadeloupe</option>
+                        <option value="region,GUYANE">Guyane</option>
+                        <option value="region,HAUTS-DE-FRANCE">Hauts-de-France</option>
+                        <option value="region,ILE-DE-FRANCE">Île-de-France</option>
+                        <option value="region,LA REUNION">La Réunion</option>
+                        <option value="region,MARTINIQUE">Martinique</option>
+                        <option value="region,MAYOTTE">Mayotte</option>
+                        <option value="region,NORMANDIE">Normandie</option>
+                        <option value="region,NOUVELLE-AQUITAINE">Nouvelle-Aquitaine</option>
+                        <option value="region,OCCITANIE">Occitanie</option>
+                        <option value="region,PAYS DE LA LOIRE">Pays de la Loire</option>
+                        <option value="region,PROVENCE-ALPES-COTE D'AZUR">Provence-Alpes-Côte d'Azur</option>
+                    </optgroup>
+                    <optgroup label="Académies">
+                        <option value="academie,CLERMONT-FERRAND">Clermond-Ferrand</option>
+                        <option value="academie,GRENOBLE">Grenoble</option>
+                        <option value="academie,LYON">Lyon</option>
+                        <option value="academie,BESANCON">Besancon</option>
+                        <option value="academie,DIJON">Dijon</option>
+                        <option value="academie,RENNES">Rennes</option>
+                        <option value="academie,ORLEANS-TOURS">Orléans-Tours</option>
+                        <option value="academie,CORSE">Corse</option>
+                        <option value="academie,NANCY-METZ">Nancy-Metz</option>
+                        <option value="academie,REIMS">Reims</option>
+                        <option value="academie,STRASBOURG">Strasbourg</option>
+                        <option value="academie,GUADELOUPE">Guadeloupe</option>
+                        <option value="academie,GUYANE">Guyane</option>
+                        <option value="academie,AMIENS">Amiens</option>
+                        <option value="academie,LILLE">Lille</option>
+                        <option value="academie,CRETEIL">Creteil</option>
+                        <option value="academie,PARIS">Paris</option>
+                        <option value="academie,VERSAILLES">Versailles</option>
+                        <option value="academie,LA REUNION">La Réunion</option>
+                        <option value="academie,MARTINIQUE">Martinique</option>
+                        <option value="academie,MAYOTTE">Mayotte</option>
+                        <option value="academie,NORMANDIE">Normandie</option>
+                        <option value="academie,BORDEAUX">Bordeaux</option>
+                        <option value="academie,LIMOGES">Limoges</option>
+                        <option value="academie,POITIERS">Poitiers</option>
+                        <option value="academie,MONTPELLIER">Montpellier</option>
+                        <option value="academie,TOULOUSE">Toulouse</option>
+                        <option value="academie,NANTES">Nantes</option>
+                        <option value="academie,AIX-MARSEILLE">Aix-Marseille</option>
+                        <option value="academie,NICE">Nice</option>
+                        <option value="academie,NOUVELLE CALEDONIE">Nouvelle Calédonie</option>
+                        <option value="academie,POLYNESIE FRANCAISE">Polynésie Française</option>
+                        <option value="academie,ST PIERRE ET MIQUELON">St Pierre et Miquelon</option>
+                    </optgroup>
                 </select>
             </div>
         </div>
         <div class = "row justify-content-center">
-            <button id="barbtn" type="button" class="btn btn-success" style="margin-top: 15px;">Générer le graphique</button>
+            <button id="barbtn" type="submit" class="btn btn-success" style="margin-top: 15px;">Générer le graphique</button>
         </div>
-
-        <div id="resRow" class = "row justify-content-center" style="margin-top: 40px;" hidden>        
-            <div class="col-12 col-md-8 col-lg-4 d-flex justify-content-center">
-                <div class="card w-300" style="margin-bottom: 15px;">
-                    <img id="resImage" src="" alt="Graphique" style="padding-top: 10px;" hidden/>
-                    <div id="resCard" class="card-body text-center" hidden>
-                        <a id="btnSave" href="#" class="btn btn-primary" hidden>Sauvegarder le graphique</a>
-                    </div>
-                </div>
+        <div id="resRow" class = "row justify-content-center" style="margin-top: 30px;" hidden>        
+            <div class="card text-center" style="width: 43rem; border-radius: 2em;">
+                <h4 class="card-title" style="padding-top: 10px;">Resultat:</h5>
+                <img class="card_img_top" id="resImage" src="" alt="Graphique" style="height: 100%; width: 100%; padding-left: 23px;" hidden/>
             </div>
         </div>
     </div>

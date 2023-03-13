@@ -27,8 +27,11 @@ def background_process_bar():
     if year == "--Année--" or classe == "--Classe--" or gender == "--Genre--" or tmpLoc in locationErrors:
         return jsonify(res=False)
     
+
     location = tmpLoc.split(",")[0]
-    locationName = tmpLoc.split(",")[1]
+    locationName = None
+    if tmpLoc != "fr":
+        locationName = tmpLoc.split(",")[1]
 
     dataResult = data.speCount(classe+".csv",year,gender,location,locationName)
     plt = viz.barPlot(dataResult,year,classe,gender,location,locationName)
