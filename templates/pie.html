@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
 
+{% block navbar %}
+    <li class="nav-item">
+        <a class="nav-link" href="/">Accueil</a>
+    </li>
+    <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Visualisations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/bar">Graphique a Barres</a>
+            <a class="dropdown-item" href="/map">Carte de chaleur</a>
+            <a class="dropdown-item" href="#">Diagramme circulaire</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/about">A propos</a>
+    </li>
+{% endblock %}
+
 {% block content %}
 
 {% endblock %}

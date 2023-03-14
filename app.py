@@ -16,6 +16,18 @@ def index():
 def bar():
     return render_template('bar.html')
 
+@app.route('/map')
+def map():
+    return render_template('map.html')
+
+@app.route('/pie')
+def pie():
+    return render_template('pie.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/background_process_bar')
 def background_process_bar():
     year = request.args.get('year',"",str)

@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
 
+{% block navbar %}
+    <li class="nav-item active">
+        <a class="nav-link" href="#">Accueil</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Visualisations
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/bar">Graphique a Barres</a>
+            <a class="dropdown-item" href="/map">Carte de chaleur</a>
+            <a class="dropdown-item" href="/pie">Diagramme circulaire</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/about">A propos</a>
+    </li>
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <p class="text-center h2" style="padding-top: 25px; padding-bottom: 30px; ">Choisissez le graphique que vous voulez générer:</p>
@@ -21,7 +40,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Carte de chaleur</h5>
                         <p class="card-text">Affiche une carte de chaleur de la France avec la spécialité de votre choix</p>
-                        <a href="#" class="btn btn-primary">Créer ce graphique</a>
+                        <a href="map" class="btn btn-primary">Créer ce graphique</a>
                     </div>
                 </div>
             </div>
@@ -32,7 +51,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Diagramme circulaire</h5>
                         <p class="card-text">Affiche la répartition garçon/fille dans la spécialité de votre choix</p>
-                        <a href="#" class="btn btn-primary">Créer ce graphique</a>
+                        <a href="pie" class="btn btn-primary">Créer ce graphique</a>
                     </div>
                 </div>
             </div>
