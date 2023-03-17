@@ -20,5 +20,38 @@
 {% endblock %}
 
 {% block content %}
+    <div class="container">
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-md-6">
+                <p class="text-center h2 font-weight-bold" style="padding-top: 25px; padding-bottom: 30px; ">
+                    Le créateur
+                </p>
+                <p class="text-justify">
+                    Je m'appelle Nicolas, j'ai 18 ans et je suis actuellement étudiant en 1ère année en BUT Informatique à l'IUT de La Rochelle.
+                    <br><br>Passioné d'informatique depuis de nombreuses années, je m'intéresse a de nombreux thèmes: Logiciels, Robotique, Jeux-Vidéo, Cybersécurité, Data, Intelligence Artificielle, Machine Learning...
+                    <br><br>J'ai réalisé plusieurs projets comme la création de jeux-vidéo, d'un BOT Discord, d'experimentations Arduino, de sites web ou encore de la visualisations de données, notamment avec ce projet.
+                    <br><br>Je programme principalement avec le langage Python mais je maitrise aussi d'autres langages de programmation comme C++, JavaScript, HTML/CSS...
+                    <br><br>Par ailleurs, je tiens une chaîne <a target="_blank" href="https://www.youtube.com/@techwithnirs">YouTube</a> sur laquelle je poste notamment des vidéos en Anglais expliquant les projets que je réalise.
+                    <br><br>Pour en savoir plus, voici le lien vers mon <a target="_blank" href="https://github.com/Nirs123">GitHub</a> où vous pouvez retrouver mes projets. Si vous voulez me contacter, n'hésitez pas a me contacter par mail: <a href = "mailto: nirs123@protonmail.com">nirs123@protonmail.com</a> ou à m'ajouter sur <a target="_blank" href="https://www.linkedin.com/in/nicolas-foussard-b60613229/">LinkedIn</a>
+                </p>    
 
+            </div>
+            
+            <div class="col-md-6">
+                <p class="text-center h2 font-weight-bold" style="padding-top: 25px; padding-bottom: 30px; ">
+                    Le projet
+                </p>
+                <p class="text-justify">
+                    Ce projet de Data Visualisations a commencé en Janvier 2023 lorsque j'explorais les jeux de données sur le site <a target="_blank" href="https://www.data.gouv.fr/fr/">data.gouv.fr</a>. 
+                    <br><br>Etant élève au lycée l'année précédente, je me suis alors penché vers les jeux de données que proposais le Ministère de l'Education Nationale et je suis alors tombé sur un jeu de données qui répertoriait toutes les infos sur les spécialités enseignés au Lycée: nombre d'étudiant en première, terminale, établissements... 
+                    <br><br>Avec ce jeu de donnée, j'ai codé en Python un programme en 2 parties:
+                    <ol>
+                        <li>Récupération des données voulues depuis les tableaux du jeu de données grâce a plusieurs librairies Python comme Pandas ou Numpy</li>
+                        <li>Génération des graphiques grâces aux données que j'ai extraites et aux librairies comme Matplotlib ou Geopandas.</li> 
+                    </ol>
+                    Après cela, je me suis dit qu'il était intéressant d'avoir un site internet qui permettait de génerer autant de graphique que voulu, c'est pour cela que j'ai réalisé ce site web avec Python grâce a la librairie Flask.
+                </p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
