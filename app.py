@@ -4,8 +4,6 @@ import io
 from PIL import Image
 import base64
 import os
-import random
-import string
 import time
 # Import files
 import data
@@ -49,9 +47,6 @@ def background_process_bar():
     if tmpLoc != "fr":
         locationName = tmpLoc.split(",")[1]
 
-    characters = string.ascii_letters + string.digits
-    filename = ''.join(random.choice(characters) for i in range(20))
-
     TIME_start = time.time()
     dataResult = data.speCount(classe+".csv",year,gender,location,locationName)
     TIME_datascrap = time.time() - TIME_start
@@ -60,12 +55,12 @@ def background_process_bar():
     img_buf = io.BytesIO()
     plt.savefig(img_buf, format='png')
     im = Image.open(img_buf)
-    im.save(filename+".png")
+    im.save("tmp.png")
     tmpData = {}
-    with open(filename+".png", mode='rb') as file:
+    with open("tmp.png", mode='rb') as file:
         img = file.read()
     tmpData['img'] = base64.encodebytes(img).decode('utf-8')
-    os.remove(filename+".png")
+    os.remove("tmp.png")
     TIME_image = time.time() - TIME_start
 
     return jsonify(res=True,image=tmpData['img'],scrap_time=TIME_datascrap,image_time=TIME_image)
@@ -86,9 +81,6 @@ def background_process_pie():
     if tmpLoc != "fr":
         locationName = tmpLoc.split(",")[1]
 
-    characters = string.ascii_letters + string.digits
-    filename = ''.join(random.choice(characters) for i in range(20))
-
     TIME_start = time.time()
     dataResult = data.speCount(classe+".csv",year,gender,location,locationName)
     TIME_datascrap = time.time() - TIME_start
@@ -97,12 +89,12 @@ def background_process_pie():
     img_buf = io.BytesIO()
     plt.savefig(img_buf, format='png')
     im = Image.open(img_buf)
-    im.save(filename+".png")
+    im.save("tmp.png")
     tmpData = {}
-    with open(filename+".png", mode='rb') as file:
+    with open("tmp.png", mode='rb') as file:
         img = file.read()
     tmpData['img'] = base64.encodebytes(img).decode('utf-8')
-    os.remove(filename+".png")
+    os.remove("tmp.png")
     TIME_image = time.time() - TIME_start
 
     return jsonify(res=True,image=tmpData['img'],scrap_time=TIME_datascrap,image_time=TIME_image)
@@ -118,9 +110,6 @@ def background_process_map():
     if "Choisissez" in [year[:10], classe[:10], spe[:10], loc[:10]]:
         return jsonify(res=False)
 
-    characters = string.ascii_letters + string.digits
-    filename = ''.join(random.choice(characters) for i in range(20))
-
     TIME_start = time.time()
     if loc == "dep":
         dataResult = data.speCountDep(classe+".csv",year,spe)
@@ -132,12 +121,12 @@ def background_process_map():
     img_buf = io.BytesIO()
     plt.savefig(img_buf, format='png')
     im = Image.open(img_buf)
-    im.save(filename+".png")
+    im.save("tmp.png")
     tmpData = {}
-    with open(filename+".png", mode='rb') as file:
+    with open("tmp.png", mode='rb') as file:
         img = file.read()
     tmpData['img'] = base64.encodebytes(img).decode('utf-8')
-    os.remove(filename+".png")
+    os.remove("tmp.png")
     TIME_image = time.time() - TIME_start
 
     return jsonify(res=True,image=tmpData['img'],scrap_time=TIME_datascrap,image_time=TIME_image)

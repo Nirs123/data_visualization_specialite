@@ -4,6 +4,7 @@ import pandas as pd
 
 #Function for bar Plot
 def barPlot(data,year,classe,gender,location,locationName):
+    plt.clf()
     #Configure values depending on gender
     if gender == "All":
         valuesGirls = list(data[0].values())
@@ -51,6 +52,7 @@ def barPlot(data,year,classe,gender,location,locationName):
     return plt
 
 def piePlot(data,year,classe,location,locationName,speName):
+    plt.clf()
     #Configuring values
     values = [data[0][speName],data[1][speName]]
     labels = ["Filles","Garçons"]
@@ -74,6 +76,7 @@ def piePlot(data,year,classe,location,locationName,speName):
     return plt
 
 def mapPlot(data,year,classe,location,speName):
+    plt.clf()
     newDF = pd.DataFrame.from_dict(data)
     mapShape = gpd.read_file("geo/"+location+".geojson")
 
