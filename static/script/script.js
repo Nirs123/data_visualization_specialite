@@ -23,8 +23,9 @@ $(function()
                 myRow.removeAttribute("hidden");
                 let myImg = document.getElementById('resImage');
                 myImg.removeAttribute("hidden");
-                myImg.src = "tmp.png";
-                $.getJSON('/delete_img',{},function(data){});
+                myImg.src = "static/generatedGraphic/" + data.path + ".png";
+                let myDLbtn = document.getElementById('downloadBAR');
+                myDLbtn.href = "static/generatedGraphic/" + data.path + ".png";
 
                 console.log("SCRAP TIME: "+data.scrap_time);
                 console.log("GRAPH TIME: "+data.graphic_time);
@@ -67,7 +68,9 @@ $(function()
                 myRow.removeAttribute("hidden");
                 let myImg = document.getElementById('resImage');
                 myImg.removeAttribute("hidden");
-                myImg.src = "static/tmp.png";
+                myImg.src = "static/generatedGraphic/" + data.path + ".png";
+                let myDLbtn = document.getElementById('downloadPIE');
+                myDLbtn.href = "static/generatedGraphic/" + data.path + ".png";
 
                 console.log("SCRAP TIME: "+data.scrap_time);
                 console.log("GRAPH TIME: "+data.graphic_time);
@@ -110,7 +113,9 @@ $(function()
                 myRow.removeAttribute("hidden");
                 let myImg = document.getElementById('resImage');
                 myImg.removeAttribute("hidden");
-                myImg.src = "static/tmp.png";
+                myImg.src = "static/generatedGraphic/" + data.path + ".png";
+                let myDLbtn = document.getElementById('downloadMAP');
+                myDLbtn.href = "static/generatedGraphic/" + data.path + ".png";
 
                 console.log("SCRAP TIME: "+data.scrap_time);
                 console.log("GRAPH TIME: "+data.graphic_time);

@@ -54,13 +54,14 @@ def background_process_bar():
     TIME_start = time.time()
     plt = viz.barPlot(dataResult,year,classe,gender,location,locationName)
     TIME_graphic = time.time() - TIME_start
-    plt.savefig("static/tmp.png")
+    pathfile = time.time_ns()
+    pathfile = str(time.time_ns()) + "_bar"
+    plt.savefig("static/generatedGraphic/"+pathfile+".png")
     TIME_start = time.time()
-    
     
     TIME_image = time.time() - TIME_start
 
-    return jsonify(res=True,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
+    return jsonify(res=True,path=pathfile,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
 
 # PIE
 @app.route('/background_process_pie')
@@ -86,10 +87,11 @@ def background_process_pie():
     plt = viz.piePlot(dataResult,year,classe,location,locationName,spe)
     TIME_graphic = time.time() - TIME_start
     TIME_start = time.time()
-    plt.savefig("static/tmp.png")
+    pathfile = str(time.time_ns()) + "_pie"
+    plt.savefig("static/generatedGraphic/"+pathfile+".png")
     TIME_image = time.time() - TIME_start
 
-    return jsonify(res=True,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
+    return jsonify(res=True,path=pathfile,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
 
 # MAP
 @app.route('/background_process_map')
@@ -99,6 +101,7 @@ def background_process_map():
     spe = request.args.get('spe',"",str)
     loc = request.args.get('location',"",str)
 
+    print(year,year[:10])
     if "Choisissez" in [year[:10], classe[:10], spe[:10], loc[:10]]:
         return jsonify(res=False)
 
@@ -112,10 +115,11 @@ def background_process_map():
     plt = viz.mapPlot(dataResult,year,classe,loc,spe)
     TIME_graphic = time.time() - TIME_start
     TIME_start = time.time()
-    plt.savefig("static/tmp.png")
+    pathfile = str(time.time_ns()) + "_map"
+    plt.savefig("static/generatedGraphic/"+pathfile+".png")
     TIME_image = time.time() - TIME_start
 
-    return jsonify(res=True,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
+    return jsonify(res=True,path=pathfile,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
 
 if __name__ == "__main__":
     app.run(debug=True)

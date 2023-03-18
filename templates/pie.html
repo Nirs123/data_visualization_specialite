@@ -25,7 +25,7 @@
         <div class = "row">
             <div class="col-lg-3 d-flex justify-content-center">
                 <select id="year" class="form-select form-control" aria-label="Default select example" style="margin-bottom: 15px;" required>
-                    <option value="" disabled selected>Choisissez une année</option>
+                    <option disabled selected>Choisissez une année</option>
                     <option value="2020">2020</option>
                     <option value="2021">2021</option>
                 </select>
@@ -124,7 +124,10 @@
         <div id="resRow" class = "row justify-content-center" style="margin-top: 30px;" hidden>        
             <div class="card text-center" style="width: 43rem; border-radius: 2em;">
                 <h4 class="card-title" style="padding-top: 10px;">Resultat:</h5>
-                <img class="card_img_top" id="resImage" src="" alt="Graphique" style="height: 100%; width: 100%; padding-left: 23px;" hidden/>
+                <img class="card_img_top" id="resImage" src="" alt="Graphique" style="height: 100%; width: 100%;" hidden/>
+                <a id="downloadPIE" href="" download="yourGraphic">
+                    <button type="button" class="btn btn-primary">Download</button>
+                </a>
             </div>
         </div>
     </div>
