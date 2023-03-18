@@ -31,6 +31,7 @@ def pie():
 def about():
     return render_template('about.html')
 
+# BAR
 @app.route('/background_process_bar')
 def background_process_bar():
     year = request.args.get('year',"",str)
@@ -52,19 +53,16 @@ def background_process_bar():
     TIME_datascrap = time.time() - TIME_start
     TIME_start = time.time()
     plt = viz.barPlot(dataResult,year,classe,gender,location,locationName)
-    img_buf = io.BytesIO()
-    plt.savefig(img_buf, format='png')
-    im = Image.open(img_buf)
-    im.save("tmp.png")
-    tmpData = {}
-    with open("tmp.png", mode='rb') as file:
-        img = file.read()
-    tmpData['img'] = base64.encodebytes(img).decode('utf-8')
-    os.remove("tmp.png")
+    TIME_graphic = time.time() - TIME_start
+    plt.savefig("static/tmp.png")
+    TIME_start = time.time()
+    
+    
     TIME_image = time.time() - TIME_start
 
-    return jsonify(res=True,image=tmpData['img'],scrap_time=TIME_datascrap,image_time=TIME_image)
+    return jsonify(res=True,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
 
+# PIE
 @app.route('/background_process_pie')
 def background_process_pie():
     year = request.args.get('year',"",str)
@@ -86,20 +84,14 @@ def background_process_pie():
     TIME_datascrap = time.time() - TIME_start
     TIME_start = time.time()
     plt = viz.piePlot(dataResult,year,classe,location,locationName,spe)
-    img_buf = io.BytesIO()
-    plt.savefig(img_buf, format='png')
-    im = Image.open(img_buf)
-    im.save("tmp.png")
-    tmpData = {}
-    with open("tmp.png", mode='rb') as file:
-        img = file.read()
-    tmpData['img'] = base64.encodebytes(img).decode('utf-8')
-    os.remove("tmp.png")
+    TIME_graphic = time.time() - TIME_start
+    TIME_start = time.time()
+    plt.savefig("static/tmp.png")
     TIME_image = time.time() - TIME_start
 
-    return jsonify(res=True,image=tmpData['img'],scrap_time=TIME_datascrap,image_time=TIME_image)
+    return jsonify(res=True,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
 
-# todo
+# MAP
 @app.route('/background_process_map')
 def background_process_map():
     year = request.args.get('year',"",str)
@@ -118,18 +110,12 @@ def background_process_map():
     TIME_datascrap = time.time() - TIME_start
     TIME_start = time.time()
     plt = viz.mapPlot(dataResult,year,classe,loc,spe)
-    img_buf = io.BytesIO()
-    plt.savefig(img_buf, format='png')
-    im = Image.open(img_buf)
-    im.save("tmp.png")
-    tmpData = {}
-    with open("tmp.png", mode='rb') as file:
-        img = file.read()
-    tmpData['img'] = base64.encodebytes(img).decode('utf-8')
-    os.remove("tmp.png")
+    TIME_graphic = time.time() - TIME_start
+    TIME_start = time.time()
+    plt.savefig("static/tmp.png")
     TIME_image = time.time() - TIME_start
 
-    return jsonify(res=True,image=tmpData['img'],scrap_time=TIME_datascrap,image_time=TIME_image)
+    return jsonify(res=True,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
 
 if __name__ == "__main__":
     app.run(debug=True)

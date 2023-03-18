@@ -23,9 +23,11 @@ $(function()
                 myRow.removeAttribute("hidden");
                 let myImg = document.getElementById('resImage');
                 myImg.removeAttribute("hidden");
-                myImg.src = "data:image/png;base64, "+data.image;
+                myImg.src = "tmp.png";
+                $.getJSON('/delete_img',{},function(data){});
 
                 console.log("SCRAP TIME: "+data.scrap_time);
+                console.log("GRAPH TIME: "+data.graphic_time);
                 console.log("IMAGE TIME: "+data.image_time);
 
                 document.getElementById('barbtn').disabled = false;
@@ -65,9 +67,10 @@ $(function()
                 myRow.removeAttribute("hidden");
                 let myImg = document.getElementById('resImage');
                 myImg.removeAttribute("hidden");
-                myImg.src = "data:image/png;base64, "+data.image;
+                myImg.src = "static/tmp.png";
 
                 console.log("SCRAP TIME: "+data.scrap_time);
+                console.log("GRAPH TIME: "+data.graphic_time);
                 console.log("IMAGE TIME: "+data.image_time);
 
                 document.getElementById('piebtn').disabled = false;
@@ -107,9 +110,10 @@ $(function()
                 myRow.removeAttribute("hidden");
                 let myImg = document.getElementById('resImage');
                 myImg.removeAttribute("hidden");
-                myImg.src = "data:image/png;base64, "+data.image;
+                myImg.src = "static/tmp.png";
 
                 console.log("SCRAP TIME: "+data.scrap_time);
+                console.log("GRAPH TIME: "+data.graphic_time);
                 console.log("IMAGE TIME: "+data.image_time);
 
                 document.getElementById('mapbtn').disabled = false;
