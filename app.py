@@ -52,11 +52,10 @@ def background_process_bar():
     TIME_start = time.time()
     plt = viz.barPlot(dataResult,year,classe,gender,location,locationName)
     TIME_graphic = time.time() - TIME_start
+    TIME_start = time.time() 
     myPWD = os.getcwd()
     pathfile = str(time.time_ns()) + "_bar"
     plt.savefig(myPWD + "/static/generatedGraphic/"+pathfile+".png")
-    TIME_start = time.time()
-    
     TIME_image = time.time() - TIME_start
 
     return jsonify(res=True,path=pathfile,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
