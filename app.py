@@ -54,7 +54,7 @@ def background_process_bar():
     TIME_graphic = time.time() - TIME_start
     TIME_start = time.time() 
     pathfile = str(time.time_ns()) + "_bar"
-    plt.savefig("/static/generatedGraphic/"+pathfile+".png")
+    plt.savefig("static/generatedGraphic/"+pathfile+".png")
     TIME_image = time.time() - TIME_start
     return jsonify(res=True,path=pathfile,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
 
@@ -83,7 +83,7 @@ def background_process_pie():
     TIME_graphic = time.time() - TIME_start
     TIME_start = time.time()
     pathfile = str(time.time_ns()) + "_pie"
-    plt.savefig("/static/generatedGraphic/"+pathfile+".png")
+    plt.savefig("static/generatedGraphic/"+pathfile+".png")
     TIME_image = time.time() - TIME_start
 
     return jsonify(res=True,path=pathfile,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
@@ -111,7 +111,7 @@ def background_process_map():
     TIME_graphic = time.time() - TIME_start
     TIME_start = time.time()
     pathfile = str(time.time_ns()) + "_map"
-    plt.savefig("/static/generatedGraphic/"+pathfile+".png")
+    plt.savefig("static/generatedGraphic/"+pathfile+".png")
     TIME_image = time.time() - TIME_start
 
     return jsonify(res=True,path=pathfile,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
