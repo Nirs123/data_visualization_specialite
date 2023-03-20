@@ -1,8 +1,6 @@
 # Import libraries
 from flask import Flask, request, render_template,jsonify
-import io
 from PIL import Image
-import base64
 import os
 import time
 # Import files
@@ -54,9 +52,9 @@ def background_process_bar():
     TIME_start = time.time()
     plt = viz.barPlot(dataResult,year,classe,gender,location,locationName)
     TIME_graphic = time.time() - TIME_start
-    pathfile = time.time_ns()
+    myPWD = os.getcwd()
     pathfile = str(time.time_ns()) + "_bar"
-    plt.savefig("static/generatedGraphic/"+pathfile+".png")
+    plt.savefig(myPWD + "/static/generatedGraphic/"+pathfile+".png")
     TIME_start = time.time()
     
     TIME_image = time.time() - TIME_start
@@ -87,8 +85,9 @@ def background_process_pie():
     plt = viz.piePlot(dataResult,year,classe,location,locationName,spe)
     TIME_graphic = time.time() - TIME_start
     TIME_start = time.time()
+    myPWD = os.getcwd()
     pathfile = str(time.time_ns()) + "_pie"
-    plt.savefig("static/generatedGraphic/"+pathfile+".png")
+    plt.savefig(myPWD + "/static/generatedGraphic/"+pathfile+".png")
     TIME_image = time.time() - TIME_start
 
     return jsonify(res=True,path=pathfile,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
@@ -115,8 +114,9 @@ def background_process_map():
     plt = viz.mapPlot(dataResult,year,classe,loc,spe)
     TIME_graphic = time.time() - TIME_start
     TIME_start = time.time()
+    myPWD = os.getcwd()
     pathfile = str(time.time_ns()) + "_map"
-    plt.savefig("static/generatedGraphic/"+pathfile+".png")
+    plt.savefig(myPWD + "/static/generatedGraphic/"+pathfile+".png")
     TIME_image = time.time() - TIME_start
 
     return jsonify(res=True,path=pathfile,scrap_time=TIME_datascrap,graphic_time=TIME_graphic,image_time=TIME_image)
