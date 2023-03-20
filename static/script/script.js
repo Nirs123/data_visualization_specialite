@@ -23,9 +23,9 @@ $(function()
                 myRow.removeAttribute("hidden");
                 let myImg = document.getElementById('resImage');
                 myImg.removeAttribute("hidden");
-                myImg.src = "/static/generatedGraphic/" + data.path + ".png";
+                //myImg.src = "/static/generatedGraphic/" + data.path + ".png";
                 let myDLbtn = document.getElementById('downloadBAR');
-                myDLbtn.href ="/static/generatedGraphic/" + data.path + ".png";
+                //myDLbtn.href ="/static/generatedGraphic/" + data.path + ".png";
 
                 console.log("SCRAP TIME: "+data.scrap_time);
                 console.log("GRAPH TIME: "+data.graphic_time);
@@ -68,9 +68,9 @@ $(function()
                 myRow.removeAttribute("hidden");
                 let myImg = document.getElementById('resImage');
                 myImg.removeAttribute("hidden");
-                myImg.src = __dirname + "static/generatedGraphic/" + data.path + ".png";
+                //myImg.src = __dirname + "static/generatedGraphic/" + data.path + ".png";
                 let myDLbtn = document.getElementById('downloadPIE');
-                myDLbtn.href = __dirname + "static/generatedGraphic/" + data.path + ".png";
+                //myDLbtn.href = __dirname + "static/generatedGraphic/" + data.path + ".png";
 
                 console.log("SCRAP TIME: "+data.scrap_time);
                 console.log("GRAPH TIME: "+data.graphic_time);
@@ -113,9 +113,9 @@ $(function()
                 myRow.removeAttribute("hidden");
                 let myImg = document.getElementById('resImage');
                 myImg.removeAttribute("hidden");
-                myImg.src = __dirname + "static/generatedGraphic/" + data.path + ".png";
+                //myImg.src = __dirname + "static/generatedGraphic/" + data.path + ".png";
                 let myDLbtn = document.getElementById('downloadMAP');
-                myDLbtn.href = __dirname + "static/generatedGraphic/" + data.path + ".png";
+                //myDLbtn.href = __dirname + "static/generatedGraphic/" + data.path + ".png";
 
                 console.log("SCRAP TIME: "+data.scrap_time);
                 console.log("GRAPH TIME: "+data.graphic_time);
